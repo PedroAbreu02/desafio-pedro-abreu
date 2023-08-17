@@ -1,0 +1,52 @@
+total = 0
+temCafe = False
+temChantily = False
+temSanduiche = False
+temQueijo = False
+if tamanhoDaLista == 0
+    return "Não há itens no carrinho de compra!"
+for para percorre a lista.
+    separar string em duas pela vírgula.
+    resultado = i.split(",")
+    codigo = resultado[0]
+    quantidade = int (resultado[1])
+    if quantidade == 0
+        return "quantidad inválida"
+    if codigo == "cafe"
+        total += 3 * quantidade
+        temCafe = True
+    else if codigo == "chantily"
+        total += 1.50 * quantidade
+        temChantily = True
+    else if codigo == "suco"
+        total += 6.20 * quantidade
+    else if codigo == "sanduiche"
+        total += 6.50 * quantidade
+        temSanduiche = True
+    else if codigo == "queijo"
+        total += 2.00 * quantidade
+        temQueijo = True
+    else if codigo == "salgado"
+        total += 7.50 * quantidade
+    else if codigo == "combo1"
+        total += 9.50 * quantidade
+    else if codigo == "combo2"
+        total += 7.50 * quantidade
+    else
+        return "código inválido"
+
+if temChantily and not temCafe 
+    return "Item extra não pode ser pedido sem o principal"
+if temQueijo and not temSanduiche
+    return "Item extra não pode ser pedido sem o principal"
+
+if metodoDePagamento == "debito"
+    return "R$"total
+else if metodoDePagamento == "credito"
+    total = total * 1.03
+    return "R$"total
+else if metodoDePagamento == "dinheiro"
+    total = total * 0.95
+    return "R$"total
+else
+    return "Forma de pagamento inválida!"
